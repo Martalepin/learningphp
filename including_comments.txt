@@ -1,0 +1,20 @@
+<?php
+/*Attempt MySQL server connection. Assuming you are running MySqol server with default setting (user "root" with no password)*/
+$link = mysqli_connect("localhost", "root", "root", "demo");
+ 
+ //check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+//attempt to insert query execution
+$sql = "INSERT INTO persons (first_name, last_name, email_address) VALUES ('Wormy', 'VonWormenstein', 'email@email.com')";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully."; //confirms that the query worked
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link); //If the query did not work it will throw an error message
+}
+
+//close connection
+mysqli_close($link);
+?>
