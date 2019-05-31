@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "root", " ", "hardwarestore");
+$link = mysqli_connect("localhost", "root", " ", "hardwarestore"); //connect to MySQL database on my Apache Web server XAMPP
  
 // Check connection
 if($link === false){
